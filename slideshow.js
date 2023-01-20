@@ -14,6 +14,7 @@ async function nextImage() {
                 .split('\n')
                 .filter(group => group.trim().length > 0)
                 .map(src => src.startsWith('EXT:') ? src.substring(4) : `images/${src}`);
+        lastRefresh = Date.now();
     }
 
     imgIndex = (imgIndex + 1) % images.length;
